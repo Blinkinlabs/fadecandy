@@ -44,7 +44,7 @@ public:
     virtual void flush();
     virtual void describe(rapidjson::Value &object, Allocator &alloc);
 
-    static const unsigned NUM_PIXELS = 512;
+    static const unsigned NUM_PIXELS = 170;	// 512 DMX channels / 3 Channels/LED
 
     // Send current buffer contents
     void writeFramebuffer();
@@ -55,11 +55,10 @@ public:
     }
  
 private:
-    static const unsigned PIXELS_PER_PACKET = 21;
-    static const unsigned LUT_ENTRIES_PER_PACKET = 31;
-    static const unsigned FRAMEBUFFER_PACKETS = 25;
-    static const unsigned LUT_PACKETS = 25;
-    static const unsigned LUT_ENTRIES = 257;
+    static const unsigned PIXELS_PER_PACKET = 21;	// 63 / 3
+    static const unsigned FRAMEBUFFER_PACKETS = 9;	// 170 / 21
+    static const unsigned LUT_PACKETS = 25;		// ????
+    static const unsigned LUT_ENTRIES = 257;		
     static const unsigned OUT_ENDPOINT = 1;
     static const unsigned MAX_FRAMES_PENDING = 2;
 

@@ -104,7 +104,7 @@ bool LightBuddyDevice::probe(libusb_device *device)
         return false;
     }
 
-    return dd.idVendor == 0x1d50 && dd.idProduct == 0x6666;
+    return dd.idVendor == 0x1d50 && dd.idProduct == 0x60aa;
 }
 
 int LightBuddyDevice::open()
